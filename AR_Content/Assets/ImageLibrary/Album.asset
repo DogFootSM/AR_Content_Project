@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: Album
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5756931931225030290
+  m_GuidHigh: 6843872835448779941
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 4935915435947942590
+      m_GuidHigh: 12653676446900883389
+    m_SerializedTextureGuid:
+      m_GuidLow: 4315810902201587728
+      m_GuidHigh: 8422884015319138443
+    m_Size: {x: 0.2, y: 0.2}
+    m_SpecifySize: 1
+    m_Name: Aespa
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4761975913988198191
+      m_GuidHigh: 17183584468332378551
+    m_SerializedTextureGuid:
+      m_GuidLow: 982947533369205671
+      m_GuidHigh: 7682167834704941290
+    m_Size: {x: 0.2, y: 0.19876161}
+    m_SpecifySize: 1
+    m_Name: Buzz
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 4999240570175174661
+      m_GuidHigh: 3886572010650431147
+    m_SerializedTextureGuid:
+      m_GuidLow: 13021228957663628108
+      m_GuidHigh: 10598154082166738187
+    m_Size: {x: 0.2, y: 0.2015504}
+    m_SpecifySize: 1
+    m_Name: Buzz2
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5080349872460439533
+      m_GuidHigh: 16992619296658138523
+    m_SerializedTextureGuid:
+      m_GuidLow: 15390082543552403329
+      m_GuidHigh: 2745537684521936779
+    m_Size: {x: 0.2, y: 0.20062403}
+    m_SpecifySize: 1
+    m_Name: FTISLAND
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5184499593876242966
+      m_GuidHigh: 16728491710696273041
+    m_SerializedTextureGuid:
+      m_GuidLow: 172487806987057590
+      m_GuidHigh: 13718144754755853290
+    m_Size: {x: 0.2, y: 0.2}
+    m_SpecifySize: 1
+    m_Name: Ive
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5695832838049478132
+      m_GuidHigh: 16436399064068570526
+    m_SerializedTextureGuid:
+      m_GuidLow: 15651214904721466786
+      m_GuidHigh: 7614402378112300458
+    m_Size: {x: 0.2, y: 0.14758621}
+    m_SpecifySize: 1
+    m_Name: Kara
+    m_Texture: {fileID: 0}

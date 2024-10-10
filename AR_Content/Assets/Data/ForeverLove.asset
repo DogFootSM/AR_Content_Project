@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5beafb38210aa4691257d34216a963, type: 3}
+  m_Name: ForeverLove
+  m_EditorClassIdentifier: 
+  albumCoverImage: {fileID: 21300000, guid: df5163a721920da4ea10859cf18a9c6a, type: 3}
+  trackClip: {fileID: 8300000, guid: 615e15571aa93274aa4dcd139bb7cbff, type: 3}
+  singer: "\uBC84\uC988"
+  trackName: Forever Love
+  albumName: Forever Love
+  releaseDate: 2015.10.20

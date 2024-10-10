@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5beafb38210aa4691257d34216a963, type: 3}
+  m_Name: Hope
+  m_EditorClassIdentifier: 
+  albumCoverImage: {fileID: 21300000, guid: 806197818e88d5948be76043fa1b1a26, type: 3}
+  trackClip: {fileID: 8300000, guid: 3a2a8e88182420e4dae2fe212d96fc53, type: 3}
+  singer: "FT\uC544\uC77C\uB79C\uB4DC"
+  trackName: "\uBC14\uB798"
+  albumName: 'Cross & Change '
+  releaseDate: 2009.07.16

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd5beafb38210aa4691257d34216a963, type: 3}
+  m_Name: DontLove
+  m_EditorClassIdentifier: 
+  albumCoverImage: {fileID: 21300000, guid: 60920b4cb2bfb4b40b8d677efc341493, type: 3}
+  trackClip: {fileID: 8300000, guid: 831bec392b122304b8783add5f4afd2d, type: 3}
+  singer: "\uBC84\uC988"
+  trackName: "\uC0AC\uB791\uD558\uC9C0 \uC54A\uC740 \uAC83\uCC98\uB7FC"
+  albumName: '''Be One'' - Buzz The 1st Mini Album '
+  releaseDate: 2017.07.28
