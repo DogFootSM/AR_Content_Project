@@ -11,8 +11,8 @@ public class RecordController : MonoBehaviour
     private bool isPlaying;
  
 
-    private Coroutine playCo;
-    private Coroutine stopCo;
+    private Coroutine recordPlayCo;
+    private Coroutine recordStopCo;
 
 
     private void OnEnable()
@@ -27,13 +27,13 @@ public class RecordController : MonoBehaviour
         Debug.DrawRay(Camera.main.transform.position, ray.direction, Color.red);
 
 
-        if (isPlaying && stopCo != null)
+        if (isPlaying && recordStopCo != null)
         {
-            StopCoroutine(stopCo);
+            StopCoroutine(recordStopCo);
         }
-        else if (!isPlaying && playCo !=null)
+        else if (!isPlaying && recordPlayCo !=null)
         {
-            StopCoroutine (playCo);
+            StopCoroutine (recordPlayCo);
         }
 
         if (Input.GetMouseButtonDown(0))
@@ -48,14 +48,14 @@ public class RecordController : MonoBehaviour
 
                     Debug.Log("À½¾Ç Àç»ý");
                     isPlaying = true;
-                    playCo = StartCoroutine(PlayCoroutine());
+                    recordPlayCo = StartCoroutine(RecordPlayCoroutine());
                      
                 }
                 else
                 {
                     Debug.Log("À½¾Ç Á¾·á");
                     isPlaying = false;
-                    stopCo = StartCoroutine(StopCoroutines());
+                    recordStopCo = StartCoroutine(RecordStopCoroutine());
                 }
 
             }
@@ -94,7 +94,7 @@ public class RecordController : MonoBehaviour
 
 
 
-    public IEnumerator PlayCoroutine()
+    public IEnumerator RecordPlayCoroutine()
     {
         float arm = this.arm.transform.localEulerAngles.y;
         float discRot = teller.transform.eulerAngles.y;
@@ -122,7 +122,7 @@ public class RecordController : MonoBehaviour
     }
 
      
-    public IEnumerator StopCoroutines()
+    public IEnumerator RecordStopCoroutine()
     {
  
         float arm = this.arm.transform.localEulerAngles.y;
