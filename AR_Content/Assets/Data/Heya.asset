@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   albumCoverImage: {fileID: 21300000, guid: 1f8cb9b6ccbf0264ea5b9cfcf8a360be, type: 3}
   trackClip: {fileID: 8300000, guid: dd1184b5606495f4bbe2ed9b49458a58, type: 3}
-  singer: "\uC544\uC774\uBE0C"
+  singer: IVE
   trackName: "\uD574\uC57C"
   albumName: IVE SWITCH
   releaseDate: 2024.04.29

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
@@ -13,6 +14,9 @@ public class SoundManager : MonoBehaviour
     private int soundCount;
     public int SoundCount { get { return soundCount; } }
 
+    private Music curMusic;
+    public Music CurMusic { get { return curMusic; } }
+
     private void Awake()
     {
         if(Instance == null)
@@ -24,23 +28,45 @@ public class SoundManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
-    private void Start()
-    {
         soundCount = trackList.Count;
     }
 
+ 
 
     public void RandomPlay(int index)
     {
-        musicSource.clip = trackList[index].TrackClip;
+ 
+        SetTrack(trackList[index].AlbumName);
+
         musicSource.Play();
     }
+
+    public void MusicPlay(AudioClip clip)
+    {
+        musicSource.clip = clip;
+        musicSource.Play();
+    }
+
 
     public void MusicStop()
     {
         musicSource.Stop();
+    }
+
+
+    public void SetTrack(string albumName)
+    {
+        foreach(var track in trackList)
+        {
+            if(albumName == track.AlbumName)
+            {
+                //musicSource.clip = track.TrackClip;
+                curMusic = track;
+            }
+
+        }
+
     }
 
 

@@ -6,13 +6,20 @@ using UnityEngine.XR.ARFoundation;
 public class RecordController : MonoBehaviour
 {
     [SerializeField] private GameObject arm;
-    [SerializeField] private GameObject teller;
+    [SerializeField] private GameObject disk;
+    [SerializeField] private TrackList trackList;
 
     private bool isPlaying;
  
 
     private Coroutine recordPlayCo;
     private Coroutine recordStopCo;
+
+    private Music curMusic;
+ 
+
+    private string albumName;
+    public string AlbumName { get { return albumName; } set { albumName= value; } }
 
 
     private void OnEnable()
@@ -36,59 +43,37 @@ public class RecordController : MonoBehaviour
             StopCoroutine (recordPlayCo);
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.touchCount > 0)
         {
-            if (Physics.Raycast(ray.origin, ray.direction, out RaycastHit hit, 500f))
+            Touch touch = Input.GetTouch(0);
+
+            if (touch.phase == TouchPhase.Began)
             {
 
-                string tag = hit.collider.gameObject.tag;
-
-                if (tag == "Record" && !isPlaying)
+                if (Physics.Raycast(ray.origin, ray.direction, out RaycastHit hit, 500f))
                 {
+ 
+                    if (hit.collider.gameObject.tag == "Record")
+                    {
+                        if (!isPlaying)
+                        {
+                            isPlaying = true;
+                            GameManager.Instance.IsPlaying = isPlaying;
+                            recordPlayCo = StartCoroutine(RecordPlayCoroutine());
+                        }
 
-                    Debug.Log("음악 재생");
-                    isPlaying = true;
-                    recordPlayCo = StartCoroutine(RecordPlayCoroutine());
+                        else
+                        {
+                            isPlaying = false;
+                            GameManager.Instance.IsPlaying = isPlaying;
+                            recordStopCo = StartCoroutine(RecordStopCoroutine()); 
+                        }
+                        
+                    }
                      
                 }
-                else
-                {
-                    Debug.Log("음악 종료");
-                    isPlaying = false;
-                    recordStopCo = StartCoroutine(RecordStopCoroutine());
-                }
-
             }
         }
-
-        //if (Input.touchCount > 0)
-        //{
-        //    Touch touch = Input.GetTouch(0);
-           
-        //    if (touch.phase == TouchPhase.Began)
-        //    {
-
-        //        if (Physics.Raycast(ray.origin, ray.direction, out RaycastHit hit, 5f))
-        //        {
-        //            string tag = hit.collider.gameObject.tag;
-
-        //            if (tag == "Record" && !isPlaying)
-        //            {
-        //                Debug.Log("음악 재생");
-        //                isPlaying = true;
-        //                StartCoroutine(PlayCoroutine());
-                         
-        //            }
-        //            else
-        //            {
-        //                StopCoroutine(PlayCoroutine());
-        //                Debug.Log("음악 종료");
-        //                isPlaying = false;
-        //                StartCoroutine(StopCoroutine());
-        //            }
-        //        }
-        //    }
-        //}
 
     }
 
@@ -97,11 +82,14 @@ public class RecordController : MonoBehaviour
     public IEnumerator RecordPlayCoroutine()
     {
         float arm = this.arm.transform.localEulerAngles.y;
-        float discRot = teller.transform.eulerAngles.y;
+        float diskRot = disk.transform.eulerAngles.y;
 
-        //랜덤 재생 > 스캔한 이미지에 맞는 노래 재생 변경하기
-        int random = Random.Range(0, SoundManager.Instance.SoundCount);
-        SoundManager.Instance.RandomPlay(random);
+
+        curMusic = trackList.GetMusic(albumName);
+
+        SoundManager.Instance.MusicPlay(curMusic.TrackClip);
+        UIManager.Instance.Info(curMusic);
+        UIManager.Instance.SetActiveGroup();
 
 
         while (isPlaying)
@@ -112,8 +100,8 @@ public class RecordController : MonoBehaviour
                 this.arm.transform.localEulerAngles = new Vector3(0, arm, 0);
             }
 
-            discRot = 20f * Time.deltaTime;
-            teller.transform.Rotate(0, discRot, 0);
+            diskRot = 20f * Time.deltaTime;
+            disk.transform.Rotate(0, diskRot, 0);
 
             yield return null;
         }
@@ -127,11 +115,12 @@ public class RecordController : MonoBehaviour
  
         float arm = this.arm.transform.localEulerAngles.y;
         SoundManager.Instance.MusicStop();
+        UIManager.Instance.SetActiveGroup();
 
         while (!isPlaying)
         {
   
-            if(this.arm.transform.localEulerAngles.y > 0.1f)
+            if(this.arm.transform.localEulerAngles.y > 1f)
             {
                 arm -= 20f * Time.deltaTime;
                 this.arm.transform.localEulerAngles = new Vector3(0, arm, 0);

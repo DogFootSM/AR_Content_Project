@@ -101,7 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arm: {fileID: 8404989923069901527}
-  teller: {fileID: 8404989923069901525}
+  disk: {fileID: 8404989923069901525}
+  trackList: {fileID: 4513175939952336801, guid: b28351c879fb26348958144ee179ea3b, type: 3}
 --- !u!65 &1852048746
 BoxCollider:
   m_ObjectHideFlags: 0

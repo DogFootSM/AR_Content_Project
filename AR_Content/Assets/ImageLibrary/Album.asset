@@ -25,7 +25,7 @@ MonoBehaviour:
       m_GuidHigh: 8422884015319138443
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
-    m_Name: Aespa
+    m_Name: Armageddon - The 1st Album
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4761975913988198191
@@ -35,7 +35,7 @@ MonoBehaviour:
       m_GuidHigh: 7682167834704941290
     m_Size: {x: 0.2, y: 0.19876161}
     m_SpecifySize: 1
-    m_Name: Buzz
+    m_Name: Forever Love
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 4999240570175174661
@@ -45,7 +45,7 @@ MonoBehaviour:
       m_GuidHigh: 10598154082166738187
     m_Size: {x: 0.2, y: 0.2015504}
     m_SpecifySize: 1
-    m_Name: Buzz2
+    m_Name: '''Be One'' - Buzz The 1st Mini Album'
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5080349872460439533
@@ -55,7 +55,7 @@ MonoBehaviour:
       m_GuidHigh: 2745537684521936779
     m_Size: {x: 0.2, y: 0.20062403}
     m_SpecifySize: 1
-    m_Name: FTISLAND
+    m_Name: Cross & Change
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5184499593876242966
@@ -65,7 +65,7 @@ MonoBehaviour:
       m_GuidHigh: 13718144754755853290
     m_Size: {x: 0.2, y: 0.2}
     m_SpecifySize: 1
-    m_Name: Ive
+    m_Name: IVE SWITCH
     m_Texture: {fileID: 0}
   - m_SerializedGuid:
       m_GuidLow: 5695832838049478132
@@ -75,5 +75,15 @@ MonoBehaviour:
       m_GuidHigh: 7614402378112300458
     m_Size: {x: 0.2, y: 0.14758621}
     m_SpecifySize: 1
-    m_Name: Kara
+    m_Name: Honey (Special Edition)
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5122389313821059262
+      m_GuidHigh: 14916452229588690570
+    m_SerializedTextureGuid:
+      m_GuidLow: 226343507922310966
+      m_GuidHigh: 14915777755804131370
+    m_Size: {x: 0.2, y: 0.18238637}
+    m_SpecifySize: 1
+    m_Name: Beautiful Journey
     m_Texture: {fileID: 0}
