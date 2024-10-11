@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.XR.ARFoundation;
 
 public class UIManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI release;
 
     private Music music;
+    public Image Cover { get { return cover; } }
 
     private void Awake()
     {
@@ -60,10 +62,14 @@ public class UIManager : MonoBehaviour
             albumName.text = music.AlbumName;
             release.text = music.ReleaseDate;
         }
-
-
-
+          
     }
 
+    public string CoverImage()
+    {
+
+
+        return albumName.text;
+    }
 
 }

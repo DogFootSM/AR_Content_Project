@@ -1204,7 +1204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   recordPrefab: {fileID: 8404989923069901523, guid: a0d40552412428145a85e7d5555ea881, type: 3}
-  lostTimer: 3
+  lostTimer: 1
 --- !u!1 &1161492196
 GameObject:
   m_ObjectHideFlags: 0

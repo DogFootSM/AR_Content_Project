@@ -17,6 +17,9 @@ public class SoundManager : MonoBehaviour
     private Music curMusic;
     public Music CurMusic { get { return curMusic; } }
 
+    private bool isPlay;
+    public bool IsPlay { get { return isPlay; } }
+
     private void Awake()
     {
         if(Instance == null)
@@ -32,11 +35,28 @@ public class SoundManager : MonoBehaviour
         soundCount = trackList.Count;
     }
 
- 
+    private void Update()
+    {
+        isPlay = musicSource.isPlaying;
+    }
+
+    public void SetTrack(string albumName)
+    {
+        foreach (var track in trackList)
+        {
+            if (albumName == track.AlbumName)
+            {
+                //musicSource.clip = track.TrackClip;
+                curMusic = track;
+            }
+
+        }
+
+    }
 
     public void RandomPlay(int index)
     {
- 
+
         SetTrack(trackList[index].AlbumName);
 
         musicSource.Play();
@@ -55,19 +75,7 @@ public class SoundManager : MonoBehaviour
     }
 
 
-    public void SetTrack(string albumName)
-    {
-        foreach(var track in trackList)
-        {
-            if(albumName == track.AlbumName)
-            {
-                //musicSource.clip = track.TrackClip;
-                curMusic = track;
-            }
 
-        }
-
-    }
 
 
 }

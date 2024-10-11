@@ -22,9 +22,11 @@ public class RecordController : MonoBehaviour
     public string AlbumName { get { return albumName; } set { albumName= value; } }
 
 
-    private void OnEnable()
+    private void OnDisable()
     {
-        Debug.Log("프리팹 생성");
+        //비활성화 됐을 경우 arm 위치 초기화
+        this.arm.transform.localEulerAngles = new Vector3(0, 0, 0);
+        isPlaying = false;
     }
 
     private void Update()
@@ -67,10 +69,8 @@ public class RecordController : MonoBehaviour
                             isPlaying = false;
                             GameManager.Instance.IsPlaying = isPlaying;
                             recordStopCo = StartCoroutine(RecordStopCoroutine()); 
-                        }
-                        
-                    }
-                     
+                        } 
+                    } 
                 }
             }
         }
