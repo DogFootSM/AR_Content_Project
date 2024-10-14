@@ -6,8 +6,7 @@ public class TrackList : MonoBehaviour
 {
     [SerializeField] private List<Music> musics = new List<Music>();
 
-
-
+    //노래 Data 반환
     public Music GetMusic(string name)
     {
         Music music = null;

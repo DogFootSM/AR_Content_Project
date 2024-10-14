@@ -17,8 +17,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI albumName;
     [SerializeField] private TextMeshProUGUI release;
 
+    [SerializeField] private Sprite[] muteImages = new Sprite[2];
+    [SerializeField] private Image muteImg;
+
+    [SerializeField] private Sprite[] pauseImages = new Sprite[2];
+    [SerializeField] private Image pauseImg;
+
+
     private Music music;
-    public Image Cover { get { return cover; } }
 
     private void Awake()
     {
@@ -33,16 +39,16 @@ public class UIManager : MonoBehaviour
 
         group.SetActive(false);
     }
- 
-
+    
+    /// <summary>
+    /// 노래 재생 여부에 따라 UI Group 활성화 상태 변경
+    /// </summary>
     public void SetActiveGroup()
     {
-            
-
+         
         if (GameManager.Instance.IsPlaying)
         {
-            group.SetActive(true);
- 
+            group.SetActive(true); 
         }
         else
         {
@@ -50,6 +56,10 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 재생중인 노래 정보를 받아와 UI 변경
+    /// </summary>
+    /// <param name="music">노래 정보가 들어있는 Data</param>
     public void Info(Music music)
     {
         this.music = music;
@@ -61,15 +71,38 @@ public class UIManager : MonoBehaviour
             singer.text = music.Singer;
             albumName.text = music.AlbumName;
             release.text = music.ReleaseDate;
-        }
-          
+        }     
     }
 
     public string CoverImage()
-    {
-
-
+    { 
         return albumName.text;
     }
+
+    public void MuteImageChange()
+    {
+        if (SoundManager.Instance.IsMute)
+        {
+            muteImg.sprite = muteImages[1];
+        }
+        else
+        {
+            muteImg.sprite = muteImages[0];
+        }
+
+    }
+
+    public void PauseImageChange()
+    {
+        if (SoundManager.Instance.IsPlay)
+        {
+            pauseImg.sprite = pauseImages[1];
+        }
+        else
+        {
+            pauseImg.sprite = pauseImages[0];
+        }
+    }
+
 
 }

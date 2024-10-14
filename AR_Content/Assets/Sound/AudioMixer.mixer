@@ -33,7 +33,7 @@ AudioMixerController:
   - guid: 1f1392749dbcae5439ba7d4fa740e697
     name: Master
   - guid: addcaea2faf17d44da76d133f894b4d0
-    name: Music
+    name: MUSIC
   m_AudioMixerGroupViews:
   - guids:
     - c33ee4e13659e724db68d81c2165f7de
@@ -84,7 +84,8 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: d5e4909bb73a4a744834b9187af09067
-  m_FloatValues: {}
+  m_FloatValues:
+    addcaea2faf17d44da76d133f894b4d0: 0
   m_TransitionOverrides: {}
 --- !u!243 &892329853971118794
 AudioMixerGroupController:
@@ -92,7 +93,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Music
+  m_Name: MUSIC
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 3f885915f72a163488c8dff702b1e060
   m_Children: []
